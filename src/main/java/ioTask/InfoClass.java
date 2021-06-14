@@ -34,7 +34,7 @@ public class InfoClass {
                 BasicFileAttributes attr = Files.readAttributes(file, BasicFileAttributes.class);
                 DosFileAttributes attr1 = Files.readAttributes(file, DosFileAttributes.class);
                 String absPathAndName = "1. Абсолютный путь файла: " + srcFile.getAbsolutePath() + "          Имя файла: " + srcFile.getName();
-                String size = "2. Размер файла. (в килобайтах): " + (attr.size() * 0.001); //size() Returns the size of the file (in bytes).
+                String size = "2. Размер файла. (в килобайтах): " + (attr.size() /1024); //size() Returns the size of the file (in bytes).
                 String state = "3. Атрибуты файла (Чтение): " + attr1.isReadOnly() + " (Скрытый): " + attr1.isReadOnly() + " isArchive is: " + attr1.isArchive() + " isSystem is: " + attr1.isSystem();
                 String strQ = "4. Количество предложений: " + FilteringInfo.countSent;
                 try(FileWriter writer = new FileWriter(infoFile, false)){
