@@ -1,5 +1,5 @@
 1. Абсолютный путь файла: C:\Users\Vikos\IdeaProjects\ioTask\src\main\resources\SourceFolder\Shantaram.txt          Имя файла: Shantaram.txt
-2. Размер файла. (в килобайтах): 906.614
+2. Размер файла. (в килобайтах): 885
 3. Атрибуты файла (Чтение): false (Скрытый): false isArchive is: true isSystem is: false
 4. Количество предложений: 6609
 5. Количество слов: 74794

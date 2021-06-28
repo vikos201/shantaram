@@ -26,13 +26,23 @@ public class InfoClass {
 Отношение знаков препинания к символам (знаки + кол-во пробелов).
 */
 
-    public static void getInfoMethod(File infoFile, File srcFile) throws IOException {
+    public static void getInfoMethod(File infoFile, File srcFile) {
         if (infoFile.exists()) {
 
             try {
                 Path file = Paths.get("src/main/resources/SourceFolder/Shantaram.txt" );
-                BasicFileAttributes attr = Files.readAttributes(file, BasicFileAttributes.class);
-                DosFileAttributes attr1 = Files.readAttributes(file, DosFileAttributes.class);
+                BasicFileAttributes attr = null;
+                try {
+                    attr = Files.readAttributes(file, BasicFileAttributes.class);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                DosFileAttributes attr1 = null;
+                try {
+                    attr1 = Files.readAttributes(file, DosFileAttributes.class);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 String absPathAndName = "1. Абсолютный путь файла: " + srcFile.getAbsolutePath() + "          Имя файла: " + srcFile.getName();
                 String size = "2. Размер файла. (в килобайтах): " + (attr.size() /1024); //size() Returns the size of the file (in bytes).
                 String state = "3. Атрибуты файла (Чтение): " + attr1.isReadOnly() + " (Скрытый): " + attr1.isReadOnly() + " isArchive is: " + attr1.isArchive() + " isSystem is: " + attr1.isSystem();
@@ -77,6 +87,10 @@ public class InfoClass {
                 catch (FileNotFoundException fnf){
                     fnf.printStackTrace();
                 }
+                catch (IOException io){
+                    io.printStackTrace();
+                }
+
 
             } catch (UnsupportedOperationException x) {
                 System.err.println("DOS file" +

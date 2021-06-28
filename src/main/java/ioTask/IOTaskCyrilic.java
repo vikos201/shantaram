@@ -28,7 +28,7 @@ public class IOTaskCyrilic {
        7. Искл. ситуации обработать
 
        */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
             File myDir = new File("src/main/resources/ResultFolder");
             if(!myDir.exists()) {
                 myDir.mkdir();

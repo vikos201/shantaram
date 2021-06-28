@@ -35,6 +35,8 @@ public class Filtering {
            Matcher matcherCy = pattern1.matcher(sb.toString());
 
            text1 = matcherCy.replaceAll("");
+
+
 //Матчер для латиницы
            Pattern pattern2 = Pattern.compile("[^a-zA-Z\\s]");
            Matcher matcherLa = pattern2.matcher(sb.toString());
